@@ -1,0 +1,24 @@
+<div class="col-md-4">
+				<form method="post" action="single.php?action=add&r_id=<?php echo $row["r_id"]; ?>">
+					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
+				
+                         
+						<h4 class="text-info"><?php echo $row["items"]; ?></h4>
+						<h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
+						<!--<h4 class="text-danger">$ <?php echo $row["code"]; ?></h4> -->
+
+						
+
+						<input type="text" name="quantity" value="1" class="form-control" />
+
+						<input type="hidden" name="hidden_name" value="<?php echo $row["items"]; ?>" />
+
+						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+						
+						<input type="hidden" name="code" value="<?php echo $row["code"]; ?>" />
+
+						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+
+					</div>
+				</form>
+</div>
