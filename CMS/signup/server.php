@@ -34,10 +34,11 @@
 			$query = "INSERT INTO users (username, email, password) 
 					  VALUES('$username', '$email', '$password')";
 			mysqli_query($db, $query);
-
+            header("Location:http://localhost/ajkerbazar/");
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
-			header('location: index.php');
+			//header('location: index.php');
+			
 		}
 		
 		
@@ -66,7 +67,7 @@
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: index.php');
+				header("Location:http://localhost/ajkerbazar/");
 			}else {
 				array_push($errors, "Wrong username/password combination");
 			}
@@ -74,7 +75,3 @@
 	}
 
 ?>
- <form action="">
-  <input type="checkbox" name="ck" value=ck">I agree to the policy<br>
-  
-</form> 
