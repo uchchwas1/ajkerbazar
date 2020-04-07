@@ -1,4 +1,4 @@
-
+<?php include "header.html" ?>
 	<?php 
 	
 	session_start();
@@ -68,10 +68,23 @@ if(isset($_SESSION['username'])){
 						foreach($_SESSION["shopping_cart"] as $keys => $values)
 						{
 							
-							$datas[]="item name => ".$values['item_name']." item price=> ".$values['item_price']." item quantity=> ".$values['item_quantity'].'</br>';
+							//$datas[]='{'."Shop_ID:".'"'.$_GET["r_id"]."item name => ".$values['item_name']." item price=> ".$values['item_price']." item quantity=> ".$values['item_quantity'].'</br>';
 							
-							//echo $datas[$x++];
-							
+							//echo $datas[$x++];\
+							//make json format
+							    $datas[] = array(
+                                      $_GET["r_id"] => array(
+                                                        array(
+                                                           "item_name" => $values['item_name']
+                                                                ),
+                                                         array(
+                                                            "item price" => $values['item_price']
+                                                                 ),
+													     array(
+                                                            " item quantity" => $values['item_quantity']
+                                                                 )
+                                                               )
+                                                      );							
 							
 						}
 						
@@ -79,10 +92,11 @@ if(isset($_SESSION['username'])){
 		 if(!isset($_SESSION['username']))
 			 echo '<script>alert("you have to login")</script>';
 	     else {
-		 $sql="UPDATE users SET order_details ='".serialize($datas)."' WHERE username ='". $_SESSION['username']."'";
+		 $sql="UPDATE users SET order_details ='".json_encode($datas)."' WHERE username ='". $_SESSION['username']."'";
           mysqli_query($connect, $sql);
 		 }
-	                }
+
+		 }
 	}
 	?>
 
@@ -158,8 +172,8 @@ if(isset($_GET["action"]))
 
 ?>
 
- <?php include "header.html" ?>
-			
+<?php //include "header.html" ?>
+<div class="container">  <div class="row">			
 			<?php
 			
 			     $temp=$_GET['r_id'];
@@ -186,14 +200,11 @@ if(isset($_GET["action"]))
 					}
 				}
 			?>
-			
+			<br><br>
+		
 			<?php include "table.html"?>
 
-<!--order-->
-<form action="" method="post">
-<input type="submit" name="order" style="margin-top:5px;" class="btn btn-success" value="Order" />
- </form>
-				</table>
+				
 			</div>
 		</div>
 	</div>
@@ -207,4 +218,4 @@ if(isset($_GET["action"]))
  <?php } ?>
 					
 					
-	
+</div></div>	

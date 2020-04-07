@@ -29,7 +29,7 @@
 		</div>
 		<p>
 			Not yet a member? <a href="register.php">Sign up</a>
-			<a href="http://localhost/front/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">HOME PAGE</a>
+			<a href="http://localhost/ajkerbazar1/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">HOME PAGE</a>
 		</p>
 	 
 		

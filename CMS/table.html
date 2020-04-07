@@ -1,7 +1,7 @@
 <div style="clear:both"></div>
-			<br />
-			<h3>Order Details</h3>
-			<div class="table-responsive">
+				
+			
+			<div class="table-responsive"><br><h3>Order Details</h3><br>
 				<table class="table table-bordered">
 					<tr>
 						<th width="40%">Item Name</th>
@@ -31,8 +31,14 @@
 					<tr>
 						<td colspan="3" align="right">Total</td>
 						<td align="right">$ <?php echo number_format($total, 2); ?></td>
-						<td></td>
+						<!--order-->
+                        <form action="" method="post">
+						<td align="right"><input type="submit" name="order" style="margin-top:5px;" class="btn btn-success" value="Order" /></td>
+						</form>
 					</tr>
 					<?php
 					}
 					?>
+                    </table>
+				</div>
+				</div>
