@@ -1,7 +1,7 @@
-<?php include "header.html" ?>
+
 	<?php 
 	
-	session_start();
+
 	
 	//if (!isset($_GET['r_id'])) {
 	//	header('location:index.php');

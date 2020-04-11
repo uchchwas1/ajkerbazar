@@ -1,5 +1,4 @@
-<?php include('navbar.php'); ?>
-<?php include('server.php'); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
