@@ -1,0 +1,81 @@
+
+
+* {
+  margin        :0;
+  padding       :0;
+}
+
+header {
+  width         : 100%;
+  padding       : 20px;
+  margin-bottom : 35px;
+  text-align    : center;
+}
+
+
+
+main {
+  width         : 65%;
+  padding       : 10px;
+  margin        : 0 auto;
+  background    : rgb(153, 255, 204);
+  border        : 1px solid rgba(0,0,0,0.45);
+  border-radius : 5px;
+  display       : block; /* Fix for some stupid br0wsers */
+}
+
+main > section {
+  width         : 97.5%;
+  padding       : 8px;
+  background    : rgba(250,250,250,0.678);
+  border        : 1px solid rgba(250,250,250,0.838);
+  border-radius : 4px;
+  font-size     : 13px;
+}
+
+main > section > aside {
+  font-size     : 14px;
+  padding       : 5px;
+  background    : rgb(255, 133, 102);
+  border        : none;
+  border-radius : 4px;
+  box-shadow    : rgba(0,0,0,0.43) 0 -2px 1px inset;
+}
+
+[found]:after {
+  float        : right;
+  content      : attr(found);
+  font-size    : 11px;
+}
+
+main > section > article {
+  display       : inline-block;
+  padding       : 8px;
+  font-size     : 12px;
+  background    : rgba(250,250,250,0.3);
+}
+
+form > input {
+  display       : inline-block;
+  margin-bottom : 5px;
+  background    : #fff;
+  border        : 1px solid #666;
+  padding       : 8px;
+  color         : #999;
+}
+
+footer {
+  width         : 100%;
+  position      : absolute;
+  bottom        : 0;
+  left          : 0;
+  padding       : 8px;
+  background    : rgba(0,0,0,0.2);
+  color         : rgba(250,250,250,0.76);
+  font-size     : 12px;
+}
+
+footer > a {
+  text-decoration : none;
+  color           : purple;
+}
