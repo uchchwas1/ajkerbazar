@@ -11,7 +11,7 @@ require_once 'classes/entry.php';
 <html lang="en">
 <head>
   <title></title>
-
+  
   
   
 </head>
