@@ -1,5 +1,8 @@
 <?php include('server.php'); ?>
 <?php include('../../navbarwWthoutSearch.php'); ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>

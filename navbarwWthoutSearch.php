@@ -7,10 +7,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
+
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-    
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -57,13 +57,27 @@
               	<a class="dropdown-item" href="http://localhost/ajkerbazar/CMS/signup/login.php">Login</a>
               	<a class="dropdown-item" href="http://localhost/ajkerbazar/CMS/signup/register.php">Signup</a>
                 <a class="dropdown-item" href="http://localhost/ajkerbazar/CMS/signup/logout.php">Logout</a>
-			
+                <a class="dropdown-item" href="http://localhost/ajkerbazar/CMS/signup/myprofile.php">My Profile</a>
+                <a class="dropdown-item" href="http://localhost/ajkerbazar/CMS/signup/Track_Order.php">Track Order</a>
+				<a class="dropdown-item" href="http://localhost/ajkerbazar/orderHistoryTable.php">Order History</a>
+
               </div>
             </li>
 	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+
+            <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Client</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  	<a class="dropdown-item" href="http://localhost/ajkerbazar/Admin/index.php">Login</a>
+                  	<!-- <a class="dropdown-item" href="http://localhost/ajkerbazar/CMS/signup/register.php">Signup</a> -->
+                    <a class="dropdown-item" href="http://localhost/ajkerbazar/Admin/logout.php">Logout</a>
+    				<a class="dropdown-item" href="http://localhost/ajkerbazar/Admin/displayorder.php">Order History</a>
+
+                  </div>
+                </li>
 
 	        </ul>
 	      </div>
@@ -82,10 +96,10 @@
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">uchchwas.das@northsouth.edu</span>
+						    <span class="text">ajkerbazar@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						  <span class="text">7 days delivery &amp; Free Returns</span> 
+						  <span class="text">7 days delivery &amp; Free Returns</span>
 					    </div>
 				    </div>
 			    </div>

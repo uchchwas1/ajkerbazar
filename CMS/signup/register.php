@@ -1,4 +1,4 @@
-<?php include('server.php'); ?>
+<?php include('server.php');?>
 <?php include('../../navbarwWthoutSearch.php'); ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 	<div class="header">
 		<h2>Register</h2>
 	</div>
-	
+
 	<form method="post" action="register.php">
 
 		<?php include('errors.php'); ?>
@@ -32,11 +32,21 @@
 			<input type="password" name="password_2">
 		</div>
 		<div class="input-group">
+			<label>Address</label>
+			<input type="text" name="address" >
+		</div>
+
+
+		<div class="input-group">
+			<label>Contact No.</label>
+			<input type="text" name="contact" >
+		</div>
+		<div class="input-group">
 			<button type="submit" class="btn" name="reg_user">Register</button>
 		</div>
 		<p>
 			Already a member? <a href="login.php">Sign in</a>
-			
+			<a href="http://localhost/ajkerbazar/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">HOME PAGE</a>
 		</p>
 	</form>
 </body>
