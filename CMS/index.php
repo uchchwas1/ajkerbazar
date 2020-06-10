@@ -1,73 +1,61 @@
 <?php
 
+$lat=(isset($_GET['lat']))?$_GET['lat']:'';
+$long=(isset($_GET['long']))?$_GET['long']:'';
 
-require_once 'classes/entry.php';
-
-
+//do whatever you want
 
 ?>
-<?php include('../navbarwWthoutSearch.php'); ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+  .btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: black;
+  padding: 15px 76px;
+  font-size: 25px;
+  cursor: pointer;
+  display:inline-block;
+  transform: translate(450px,225px);
+}
 
-
-
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
 </head>
-<body>
-<!--navbar srt !-->
 
-<!-- END nav !-->
+<body ><!--onload="getLocation()" use it for on load page-->
 
+<!-- <button onclick="getLocation()">Try It</button> -->
+<button class="btn" onclick="getLocation()"><i class="fa fa-map-marker" ></i> Search Your Location</button>
 
+<script>
 
-<!-- Coding strt !-->
-<div class="row">
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(redirectToPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function redirectToPosition(position) {
+        window.location='showClosest.php?lat='+position.coords.latitude+'&long='+position.coords.longitude;
+    }
+</script>
 <?php
 
-$query = 'SELECT * FROM restaurant ORDER BY r_id DESC LIMIT 9;';
+echo $lat=(isset($_GET['lat']))?$_GET['lat']:'';
+echo $long=(isset($_GET['long']))?$_GET['long']:'';
 
-require_once('classes/dbh.php');
-
-$dbh = new Dbh();
-
-$rows = $dbh->executeSelect($query);
-
-//print_r($rows); ?>
-
-<div class="container">  <div class="row"><?php
-
-foreach ($rows as $row) {
-	$entry = new Entry();
-
-	$entry->setByRow($row);
+//do whatever you want
 
 ?>
-
-<div class="col-4">
-
-	     <div class="card" style="width:350px">
-           <a href="single.php?r_id=<?php echo $entry->getId(); ?>"><img class="card-img-top" src="images2\<?php echo $entry->getId(); ?>.jpg"" alt="Card image"></a>
-           <div class="card-body">
-           <a href="single.php?r_id=<?php echo $entry->getId(); ?>"><h4 class="card-title"> <?php echo $entry->getName(); ?> </h4>
-           </a>
-          </div>
-        </div>
-
- </div>
-
-
-
-
-
-
-
-<?php } ?>
- </div>
-</div>
-
-
-
-	</body>
+</body>
 </html>

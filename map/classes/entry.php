@@ -8,7 +8,7 @@ class Entry {
     private $name;
 	private $dbh;
     private $error;
-	//private $CategoryImage;
+	private $CategoryImage;
     
 
     public function __construct() {
@@ -26,13 +26,13 @@ class Entry {
         );
     }
 
-    public function setByParams( $id, $name) {
+    public function setByParams( $id, $name, $CategoryImage) {
         if (strlen($name) == 0) {
             $this->id = -1;
         } else {
             $this->id = $id;
             $this->name = $name;
-			
+			$this->CategoryImage= $CategoryImage;
           
         }
     }
@@ -41,8 +41,8 @@ class Entry {
         //print_r($row);
         $this->setByParams (
             $row['r_id'],           
-            $row['r_name']
-			//$row['r_CategoryImage']
+            $row['r_name'],
+			$row['r_CategoryImage']
 			
            
         );
@@ -193,7 +193,10 @@ class Entry {
     {
         return $this->location;
     }
-	
+	public function getCategoryImage()
+	{
+		return $this->CategoryImage;
+	}
 
     /**
      * Set the value of author

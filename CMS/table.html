@@ -1,4 +1,25 @@
+<?php
+$link=mysqli_connect("localhost","root","");
+mysqli_select_db($link,"foodbank");
+
+?>
 <div style="clear:both"></div>
+<div class="table-responsive">
+<br><h4>Shop Address</h4>
+<?php
+$shop=$_GET["r_id"];
+$res=mysqli_query($link,"select * from restaurant where r_id='$shop'");
+echo "<table>";
+while ($row=mysqli_fetch_array($res))
+{
+
+	echo "<td>"; echo $row["location"]; echo "</td>";
+
+}
+echo "</table>";
+?>
+
+</div>
 
 
 			<div class="table-responsive"><br><h3>Order Details</h3><br>

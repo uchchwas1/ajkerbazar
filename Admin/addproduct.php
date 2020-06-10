@@ -191,6 +191,7 @@ table th {
          					<option value="rice-oil">Rice/Oil</option>
          					<option value="vegetables">Vegitables</option>
                   <option value="meat-fish">Meat/Fish</option>
+                  <option value="sweets">Sweets</option>
                   <option value="others">Others</option>
          					</select>
          					</td>
