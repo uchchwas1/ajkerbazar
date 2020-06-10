@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2020 at 09:27 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jun 10, 2020 at 03:31 PM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -160,34 +160,6 @@ INSERT INTO `menu` (`id`, `r_id`, `items`, `price`, `product_qty`, `product_imag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ordered`
---
-
-CREATE TABLE `ordered` (
-  `O_id` int(11) NOT NULL,
-  `Uname` varchar(50) NOT NULL,
-  `r_id` int(11) NOT NULL,
-  `item` varchar(500) NOT NULL,
-  `price` int(11) NOT NULL,
-  `qty` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf16;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orderinfo`
---
-
-CREATE TABLE `orderinfo` (
-  `id` int(11) NOT NULL,
-  `name` varchar(500) CHARACTER SET latin1 NOT NULL,
-  `resto` int(11) NOT NULL,
-  `details` varchar(1000) CHARACTER SET latin1 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf16;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `restaurant`
 --
 
@@ -221,24 +193,8 @@ INSERT INTO `restaurant` (`r_id`, `r_name`, `r_CategoryImage`, `location`, `lat`
 (24, 'Shuvo Variety Store', '', 'DB Rd, Kachari Bazar, Gaibandha', 25.3147526, 89.5423966),
 (25, 'Orient kitchen', '', 'College Road, Polash Para, Gaibandha', 22.8087816, 89.24671909999999),
 (26, 'Astha Sweets', '', 'Road 1/2, Polash Para, Gaibandha', 25.3247534, 89.5323975),
-(27, 'Eat & Meet', '', 'Road 12/1, Hokers, Gaibandha', 25.3347544, 89.5223955);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `shopkeeper_usr`
---
-
-CREATE TABLE `shopkeeper_usr` (
-  `Id` int(11) NOT NULL,
-  `ShopName` varchar(200) NOT NULL,
-  `History` varchar(20000) NOT NULL,
-  `IncomingOrder` varchar(20000) NOT NULL,
-  `userName` varchar(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `img` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(27, 'Eat & Meet', '', 'Road 12/1, Hokers, Gaibandha', 25.3347544, 89.5223955),
+(30, 'feni super shop', '21.jpg', 'feni', 23.016643, 91.392136);
 
 -- --------------------------------------------------------
 
@@ -265,7 +221,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `address`, `contact`, `r_id`, `order_details`, `status`) VALUES
 (22, 'jamil', 'jamil@gmail.com', '0e2cc23df7e37a854499f9d918b0219d', 'basundhara', '+01826210857', 11, '[{\"Shop_ID\":\"11\",\"item_name\":\"Jamrul\",\"item_price\":\"60\",\"item_quantity\":\"1\"}]', 'Shipped'),
 (23, 'uchchwas', 'uchchwas@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'basundhara', '+01826210857', 11, '[{\"Shop_ID\":\"11\",\"item_name\":\"Coconut \",\"item_price\":\"50\",\"item_quantity\":\"1\"}]', 'Delivered'),
-(24, 'pran', 'pran@gmail.com', 'eb7f6212f3c4c2b175e968080dd5eb17', 'gaibandha', '+01342444777', 2, '[{\"Shop_ID\":\"2\",\"item_name\":\"Red Capsicum\",\"item_price\":\"30\",\"item_quantity\":\"1\"}]', 'Pending');
+(24, 'pran', 'pran@gmail.com', 'eb7f6212f3c4c2b175e968080dd5eb17', 'gaibandha', '+01342444777', 2, '[{\"Shop_ID\":\"2\",\"item_name\":\"Red Capsicum\",\"item_price\":\"30\",\"item_quantity\":\"1\"}]', 'Pending'),
+(25, 'uchchwasdas', 'uchchwas.das@northsouth.edu', '202cb962ac59075b964b07152d234b70', 'bashundhara', '+01834856800', 0, '', '');
 
 --
 -- Indexes for dumped tables
@@ -284,28 +241,10 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ordered`
---
-ALTER TABLE `ordered`
-  ADD PRIMARY KEY (`O_id`);
-
---
--- Indexes for table `orderinfo`
---
-ALTER TABLE `orderinfo`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `restaurant`
 --
 ALTER TABLE `restaurant`
   ADD PRIMARY KEY (`r_id`);
-
---
--- Indexes for table `shopkeeper_usr`
---
-ALTER TABLE `shopkeeper_usr`
-  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `users`
@@ -330,34 +269,16 @@ ALTER TABLE `menu`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
--- AUTO_INCREMENT for table `ordered`
---
-ALTER TABLE `ordered`
-  MODIFY `O_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `orderinfo`
---
-ALTER TABLE `orderinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
--- AUTO_INCREMENT for table `shopkeeper_usr`
---
-ALTER TABLE `shopkeeper_usr`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
